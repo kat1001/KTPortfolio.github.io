@@ -3,6 +3,6 @@ theme: jekyll-theme-slate
 header_pages:
   - about.md
   - education.md
-  - projects.md
+  - work.md
   - research.md
   - creative.md
