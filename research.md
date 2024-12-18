@@ -8,7 +8,9 @@
 
 ### Using Neurodegenerative Disorder Biomarkers to Predict Neurocognitive Impairment in Older Adults
 
-## Projects
+
+
+## Posters, Presentations, Projects
 
 ### Associations Between COVID-19 Restrictions and Physical Activity
 
@@ -17,3 +19,17 @@
 ### Final Project: What makes a song?
 
 ### Motivation to Eat: Homeostatic vs. Hedonic Drives
+
+
+# Coding Projects
+
+## Python
+
+### Healthy Plate Builder
+
+## Java
+
+## SPSS
+
+## SQL
+
