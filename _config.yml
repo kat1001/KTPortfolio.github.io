@@ -1,2 +1,8 @@
 title: Keionni Thompson
 theme: jekyll-theme-slate
+header_pages:
+  - about.md
+  - education.md
+  - projects.md
+  - research.md
+  - creative.md
