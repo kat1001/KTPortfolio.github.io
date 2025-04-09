@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research | Your Name</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #d1e1ca;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .research-item {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .thumbnail {
+      max-width: 200px;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      transition: transform 0.2s ease;
+    }
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .lightbox-content {
+      display: block;
+      margin: 5% auto;
+      width: 80%;
+      height: 80%;
+    }
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    a {
+      color: #0077cc;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Research</h1>
+    <div class="menu">
+      <a href="index.html">Homepage</a>
+      <a href="Projects.html">Projects</a>
+      <a href="Experience.html">Experience</a>
+    </div>
+  </header>
+
+  <section>
+
+    <h2> Papers</h2>
+    <div class = "grid">
+      <section class="research-item">
+        <h3>Title: The Impact of Gender and Age on Lung Function in Children with Sickle Cell Disease</h2>
+        <img src="images/ldaprev.png" alt="Research Thumbnail" class="thumbnail"
+             onclick="openPDF('pdfs/ldamanu.pdf')" />
+      </section>
+    
+      <section class="research-item">
+        <h3>Title: The influence of mental health disorders on diabetic neuropathy pain</h2>
+        <img src="images/thesisprev.png" alt="Research Thumbnail" class="thumbnail"
+             onclick="openPDF('pdfs/thesis.pdf')" />
+      </section>
+    
+      <section class="research-item">
+        <h3>Title: Using Neurodegenerative Disorder Biomarkers to Predict Neurocognitive Impairment in Older
+          Adults</h2>
+        <img src="images/mlprev.png" alt="Research Thumbnail" class="thumbnail"
+             onclick="openPDF('pdfs/mlmanu.pdf')" />
+      </section>
+
+
+    </div>
+  </section>
+
+  <section>
+
+    <h2> Presentations </h2>
+    <div class = "grid">
+      <section class="research-item">
+        <h3>Title: Motivation to eat </h2>
+        <img src="images/mottoeat.png" alt="Research Thumbnail" class="thumbnail"
+             onclick="openPDF('pdfs/mottoeat.pdf')" />
+      </section>
+    
+      <section class="research-item">
+        <h3>Title: Physical Activity vs Covid-19 Restrictions</h2>
+        <img src="images/physcov.png" alt="Research Thumbnail" class="thumbnail"
+             onclick="openPDF('pdfs/physcov.pdf')" />
+      </section>
+    
+      <section class="research-item">
+        <h3>Title: What makes a popular song?</h2>
+        <img src="images/popsong.png" alt="Research Thumbnail" class="thumbnail"
+             onclick="openPDF('pdfs/popsong.pdf')" />
+      </section>
+
+
+    </div>
+  </section>
+
+  <section>
+
+    <h2> Posters </h2>
+    <div class = "grid">
+      <section class="research-item">
+        <h3>Title: Preliminary The influence of mental health disorders on diabetic neuropathy pain</h2>
+        <img src="images/ldaprev.png" alt="Research Thumbnail" class="thumbnail"
+             onclick="openPDF('pdfs/ldamanu.pdf')" />
+      </section>
+    
+      <section class="research-item">
+        <h3>Title: Physical Activity vs Covid-19 Restrictions</h2>
+        <img src="images/thesisprev.png" alt="Research Thumbnail" class="thumbnail"
+             onclick="openPDF('pdfs/thesis.pdf')" />
+      </section>
+    
+
+
+    </div>
+  </section>
+
+
+  <!-- PDF Lightbox Modal -->
+  <div id="pdfLightbox" class="lightbox" onclick="closePDF()">
+    <span class="close" onclick="closePDF()">&times;</span>
+    <div class="lightbox-content">
+      <iframe id="pdfViewer"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openPDF(pdfPath) {
+      const viewer = document.getElementById("pdfViewer");
+      viewer.src = pdfPath;
+      document.getElementById("pdfLightbox").style.display = "block";
+    }
+
+    function closePDF() {
+      document.getElementById("pdfLightbox").style.display = "none";
+      document.getElementById("pdfViewer").src = ""; // unload the PDF
+    }
+  </script>
+
+</body>
+</html>
