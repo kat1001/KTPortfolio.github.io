@@ -1,2 +1,0 @@
-# KTPortfolio.github.io
-
