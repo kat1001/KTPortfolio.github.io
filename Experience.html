@@ -1,37 +1,210 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Experience | Your Name</title>
+  <title>Experience | Keionni Thompson</title>
   <style>
+    /* ==== Page Layout and Font ==== */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 40px;
-      background-color: #d1e1ca;
-      color: #333;
+      font-family: Arial, sans-serif; /* Change this to any font you prefer */
+      display: flex; /* Sidebar and content side by side */
+      background-color: #EEEDEB; /* Background color of entire page */
+      color: #3C3633; /* Default text color */
+      min-height: 100vh; /* Full height page */
+      background: linear-gradient(to right, #6e6c5f 250px, #f3f6f1 270px);
     }
-    header {
+
+    /* ==== Sidebar Styling ==== */
+    .sidebar {
+      width: 250px;
+      text-align: center;
+      background-color: #6e6c5f; /* Your sidebar color from the screenshot */
+      color: #EEEDEB;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative; /* Needed for pseudo-element */
+
+      /* Optional: soft shadow on the right */
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1); /* right-side shadow */
+    }
+
+    .sidebar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -20px; /* sticks slightly into main content */
+      width: 40px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(110, 108, 95, 1), rgba(110, 108, 95, 0));
+      z-index: 1;
+      pointer-events: none; /* lets you click through */
+    }
+
+    .sidebar h1 {
+      margin-bottom: 5px;
+    }
+
+    .sidebar p {
+      font-size: 14px; /* Subtitle text size */
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* ==== Navigation Buttons in Sidebar ==== */
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* Spacing between nav links */
+      width: 100%;
+    }
+
+    .nav-buttons a {
+      display: block;
+      text-align: center;
+      padding: 15px;
+      background-color: #3C3633; /* Button background color */
+      color: #EEEDEB; /* Button text color */
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease; /* Smooth hover effect */
+    }
+
+    .nav-buttons a:hover {
+      background-color: #ACD3A8; /* Hover color for nav links */
+    }
+
+    /* ==== Contact Info in Sidebar ==== */
+    .contact-section {
+      margin-top: 60px; /* Space between nav and contact */
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .contact-section a {
+      color: #9ddfff; /* Contact link color */
+      text-decoration: none;
+    }
+
+    /* ==== Main Content Section ==== */
+    .main-content {
+      flex: 1; /* Take up remaining space next to sidebar */
+      padding: 40px; /* Inner space of main content */
+    }
+
+    .main-content h1 {
       text-align: center;
       margin-bottom: 40px;
     }
-    a {
-      color: #0077cc;
+
+    .main-content h2 {
+      font-size: 20px; /* Section heading size */
+      margin-top: 40px;
+      border-bottom: 2px solid #EEEDEB; /* Underline section titles */
+      padding-bottom: 5px;
     }
+
+    ul {
+      list-style: none; /* Remove default bullets */
+      padding-left: 0;
+    }
+
+    li {
+      margin: 10px 0; /* Space between each experience entry */
+      font-size: 16px;
+    }
+
+    li strong {
+      color: #183101; /* Highlight job/degree title */
+    }
+
+    /* ==== Mobile Responsive Fix ==== */
+    @media (max-width: 600px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .main-content {
+        padding: 20px;
+      }
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      display: block;
+      margin: 5% auto;
+      width: 80%;
+      height: 80%;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Experience</h1>
-    <div class="menu">
-      <a href="index.html">Homepage</a>
+  <!-- ==== Sidebar Section ==== -->
+  <div class="sidebar">
+    <h1>Keionni Thompson</h1> 
+    <p>Researcher | Analyst | Enthusiast</p> 
+
+    <!-- Navigation links -->
+    <div class="nav-buttons">
+      <a href="index.html">Home</a>
+      <a href="Experience.html">Experience</a>
       <a href="Projects.html">Projects</a>
       <a href="Research.html">Research</a>
     </div>
-  </header>
 
-  <section>
+    <!-- Contact section -->
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:famthompson10@gmail.com">famthompson10@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/keionni-thompson-6b700b199" target="_blank">linkedin.com</a></p>
+      <p>GitHub: <a href="https://kat1001.github.io/KTPortfolio.github.io/" target="_blank">github.com</a></p>
+    </section>
+  </div>
+
+  <!-- ==== Main Experience Section ==== -->
+  <div class="main-content">
+    <h1>Experience</h1>
+
+    <!-- Work Experience Section -->
     <h2>Work Experience</h2>
     <ul>
       <li><strong> Research Assistant</strong> at UC San Diego (2019–2024)</li>
@@ -39,24 +212,52 @@
       <li><strong> Department Assistant </strong> at UC San Diego Bookstore Sunshine Market  (2019-2022)</li>
       <li><strong> Program Assistant </strong> at San Diego VA Health Care System (2023-Present)</li>
       <li><strong> Sports Statician </strong> at Sweetwater Union High School District (2020-Present)</li>
-      <!-- Add more as needed -->
+      <!-- Add more jobs here -->
     </ul>
-    <h2>Volunteer Experience</h2>        
-    <ul>
-      <li><strong> Syringe Services Program Volunteer</strong> at Family Health Centers San Diego (2024 - Present)</li>
-      <li><strong> Call Pool Volunteer</strong> at Thorton Pavillion UCSD Health (2020-2021)</li>
-      <li><strong> Tutor </strong> at Tutors4SD a Student-Run Organization (2020-2022)</li>
-      <!-- Add more as needed -->
-    </ul>
-    <h2>Education</h2>        
+
+    <!-- Education Section -->
+    <h2>Education</h2>
     <ul>
       <li><strong> B.S Cognitive Science & Public Health </strong> at University of California San Diego (2018 - 2022)</li>
       <li><strong> Master's in Research </strong> at University of California San Diego (2023-2024)</li>
       <li><strong> Biotechnology & Computer Information Systems  </strong> at Southwestern College (2022-2023)</li>
-      <!-- Add more as needed -->
+      <!-- Add more education entries here -->
     </ul>
+
+    <!-- Volunteer Section -->
+    <h2>Volunteer Experience</h2>
+    <ul>
+      <li><strong> Syringe Services Program Volunteer</strong> at Family Health Centers San Diego (2024 - Present)</li>
+      <li><strong> Call Pool Volunteer</strong> at Thorton Pavillion UCSD Health (2020-2021)</li>
+      <li><strong> Tutor </strong> at Tutors4SD a Student-Run Organization (2020-2022)</li>
+      <!-- Add more volunteer entries here -->
+    </ul>
+
+    <!-- === Resume Section === -->
+  <section style="text-align:center; margin-top:60px;">
+    <h2>Resume</h2>
+    <button onclick="openPDF('pdfs/resume.pdf')" style="padding: 10px 20px; font-size: 16px; background-color: #0077cc; color: white; border: none; border-radius: 8px; cursor: pointer; margin: 10px;">
+      Preview Resume
+    </button>
+    <a href="downloads/resume.pdf" download style="display:inline-block; padding: 10px 20px; font-size: 16px; background-color: #00ccaa; color: white; border-radius: 8px; text-decoration: none;">
+      Download PDF
+    </a>
   </section>
-      
+  </div>
+  
+
+  <script>
+    function openPDF(pdfPath) {
+      const viewer = document.getElementById("pdfViewer");
+      viewer.src = pdfPath;
+      document.getElementById("pdfLightbox").style.display = "block";
+    }
+  
+    function closePDF() {
+      document.getElementById("pdfLightbox").style.display = "none";
+      document.getElementById("pdfViewer").src = "";
+    }
+  </script>
+
 </body>
 </html>
-                                                         

@@ -4,35 +4,130 @@
   <meta charset="UTF-8" />
   <title>Research | Your Name</title>
   <style>
+    /* ==== GLOBAL RESET ==== */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      background-color: #EEEDEB;
+      color: #3C3633;
+      min-height: 100vh;
+      background: linear-gradient(to right, #6e6c5f 250px, #f3f6f1 270px);
+    }
+
+    /* ==== SIDEBAR ==== */
+    .sidebar {
+      width: 250px;
+      text-align: center;
+      background-color: #6e6c5f; /* Your sidebar color from the screenshot */
+      color: #EEEDEB;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative; /* Needed for pseudo-element */
+
+      /* Optional: soft shadow on the right */
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1); /* right-side shadow */
+    }
+
+    .sidebar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -20px; /* sticks slightly into main content */
+      width: 40px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(110, 108, 95, 1), rgba(110, 108, 95, 0));
+      z-index: 1;
+      pointer-events: none; /* lets you click through */
+    }
+
+    .sidebar h1 {
+      margin-bottom: 5px;
+    }
+
+    .sidebar p {
+      font-size: 14px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .nav-buttons a {
+      display: block;
+      text-align: center;
+      padding: 15px;
+      background-color: #3C3633;
+      color: #EEEDEB;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #ACD3A8;
+    }
+
+    /* ==== MAIN CONTENT ==== */
+    .main-content {
+      flex: 1;
       padding: 40px;
-      background-color: #d1e1ca;
-      color: #333;
     }
-    header {
+
+    .main-content h1 {
       text-align: center;
       margin-bottom: 40px;
     }
+
     h2 {
-      border-bottom: 2px solid #ddd;
+      border-bottom: 2px solid #ccc;
       padding-bottom: 10px;
+      margin-top: 40px;
     }
+
+    /* ==== RESEARCH SCROLL SECTIONS ==== */
+    .scroll-section {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+      scroll-snap-type: x mandatory;
+    }
+
     .research-item {
-      margin-bottom: 40px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
       text-align: center;
+      max-width: 200px;
     }
+
     .thumbnail {
+      width: 100%;
       max-width: 200px;
       cursor: pointer;
       border: 2px solid #ccc;
       border-radius: 10px;
       transition: transform 0.2s ease;
     }
+
     .thumbnail:hover {
       transform: scale(1.05);
     }
+
+    .research-item h3 {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #3C3633;
+    }
+
+    /* ==== PDF LIGHTBOX ==== */
     .lightbox {
       display: none;
       position: fixed;
@@ -44,12 +139,14 @@
       overflow: auto;
       background-color: rgba(0,0,0,0.9);
     }
+
     .lightbox-content {
       display: block;
       margin: 5% auto;
       width: 80%;
       height: 80%;
     }
+
     .close {
       position: absolute;
       top: 30px;
@@ -59,104 +156,128 @@
       font-weight: bold;
       cursor: pointer;
     }
-    a {
-      color: #0077cc;
-    }
+
     iframe {
       width: 100%;
       height: 100%;
       border: none;
       border-radius: 10px;
     }
+
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 600px) {
+      .research-item {
+        max-width: 150px;
+      }
+
+      .research-item h3 {
+        font-size: 12px;
+      }
+    }
+
+     /* ==== Optional Contact Info Styling (if you added it) ==== */
+  .contact-info {
+      margin-top: 40px; /* Space above contact section */
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #ccc; /* Lighter gray heading in contact section */
+    }
+
+    .contact-info a {
+      color: #9ddfff; /* Link color */
+      text-decoration: none; /* No underline */
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Research</h1>
-    <div class="menu">
-      <a href="index.html">Homepage</a>
-      <a href="Projects.html">Projects</a>
+  <!-- ==== SIDEBAR ==== -->
+  <div class="sidebar">
+    <h1>Keionni Thompson</h1>
+    <p>Researcher | Analyst | Enthusiast</p>
+    <div class="nav-buttons">
+      <a href="index.html">Home</a>
       <a href="Experience.html">Experience</a>
+      <a href="Projects.html">Projects</a>
+      <a href="Research.html">Research</a>
     </div>
-  </header>
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:famthompson10@gmail.com">famthompson10@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/keionni-thompson-6b700b199" target="_blank">linkedin.com</a></p>
+      <p>GitHub: <a href="https://kat1001.github.io/KTPortfolio.github.io/" target="_blank">github.com</a></p>
+    </section>
+  </div>
 
-  <section>
+  <!-- ==== MAIN CONTENT ==== -->
+  <div class="main-content">
+    <h1>Research</h1>
 
-    <h2> Papers</h2>
-    <div class = "grid">
-      <section class="research-item">
-        <h3>Title: The Impact of Gender and Age on Lung Function in Children with Sickle Cell Disease</h2>
-        <img src="images/ldaprev.png" alt="Research Thumbnail" class="thumbnail"
-             onclick="openPDF('pdfs/ldamanu.pdf')" />
-      </section>
-    
-      <section class="research-item">
-        <h3>Title: The influence of mental health disorders on diabetic neuropathy pain</h2>
-        <img src="images/thesisprev.png" alt="Research Thumbnail" class="thumbnail"
-             onclick="openPDF('pdfs/thesis.pdf')" />
-      </section>
-    
-      <section class="research-item">
-        <h3>Title: Using Neurodegenerative Disorder Biomarkers to Predict Neurocognitive Impairment in Older
-          Adults</h2>
-        <img src="images/mlprev.png" alt="Research Thumbnail" class="thumbnail"
-             onclick="openPDF('pdfs/mlmanu.pdf')" />
-      </section>
+    <!-- PAPERS -->
+    <section>
+      <h2>Papers</h2>
+      <div class="scroll-section">
+        <div class="research-item">
+          <img src="images/ldaprev.png" class="thumbnail" onclick="openPDF('pdfs/ldamanu.pdf')" />
+          <h3>The Impact of Gender and Age on Lung Function in Children</h3>
+        </div>
+        <div class="research-item">
+          <img src="images/thesisprev.png" class="thumbnail" onclick="openPDF('pdfs/thesis.pdf')" />
+          <h3>The Influence of Mental Health on Diabetic Neuropathy Pain</h3>
+        </div>
+        <div class="research-item">
+          <img src="images/mlprev.png" class="thumbnail" onclick="openPDF('pdfs/mlmanu.pdf')" />
+          <h3>Neurodegenerative Biomarkers & Cognitive Decline</h3>
+        </div>
+      </div>
+    </section>
 
+    <!-- PRESENTATIONS -->
+    <section>
+      <h2>Presentations</h2>
+      <div class="scroll-section">
+        <div class="research-item">
+          <img src="images/mottoeat.png" class="thumbnail" onclick="openPDF('pdfs/mottoeat.pdf')" />
+          <h3>Motivation to Eat</h3>
+        </div>
+        <div class="research-item">
+          <img src="images/physcov.png" class="thumbnail" onclick="openPDF('pdfs/physcov.pdf')" />
+          <h3>Physical Activity vs COVID-19</h3>
+        </div>
+        <div class="research-item">
+          <img src="images/popsong.png" class="thumbnail" onclick="openPDF('pdfs/popsong.pdf')" />
+          <h3>What Makes a Popular Song?</h3>
+        </div>
+      </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- POSTERS -->
+    <section>
+      <h2>Posters</h2>
+      <div class="scroll-section">
+        <div class="research-item">
+          <img src="images/ldaprev.png" class="thumbnail" onclick="openPDF('pdfs/ldamanu.pdf')" />
+          <h3>Preliminary: Mental Health & Neuropathy Pain</h3>
+        </div>
+        <div class="research-item">
+          <img src="images/thesisprev.png" class="thumbnail" onclick="openPDF('pdfs/thesis.pdf')" />
+          <h3>Physical Activity vs COVID-19</h3>
+        </div>
+      </div>
+    </section>
+  </div>
 
-  <section>
-
-    <h2> Presentations </h2>
-    <div class = "grid">
-      <section class="research-item">
-        <h3>Title: Motivation to eat </h2>
-        <img src="images/mottoeat.png" alt="Research Thumbnail" class="thumbnail"
-             onclick="openPDF('pdfs/mottoeat.pdf')" />
-      </section>
-    
-      <section class="research-item">
-        <h3>Title: Physical Activity vs Covid-19 Restrictions</h2>
-        <img src="images/physcov.png" alt="Research Thumbnail" class="thumbnail"
-             onclick="openPDF('pdfs/physcov.pdf')" />
-      </section>
-    
-      <section class="research-item">
-        <h3>Title: What makes a popular song?</h2>
-        <img src="images/popsong.png" alt="Research Thumbnail" class="thumbnail"
-             onclick="openPDF('pdfs/popsong.pdf')" />
-      </section>
-
-
-    </div>
-  </section>
-
-  <section>
-
-    <h2> Posters </h2>
-    <div class = "grid">
-      <section class="research-item">
-        <h3>Title: Preliminary The influence of mental health disorders on diabetic neuropathy pain</h2>
-        <img src="images/ldaprev.png" alt="Research Thumbnail" class="thumbnail"
-             onclick="openPDF('pdfs/ldamanu.pdf')" />
-      </section>
-    
-      <section class="research-item">
-        <h3>Title: Physical Activity vs Covid-19 Restrictions</h2>
-        <img src="images/thesisprev.png" alt="Research Thumbnail" class="thumbnail"
-             onclick="openPDF('pdfs/thesis.pdf')" />
-      </section>
-    
-
-
-    </div>
-  </section>
-
-
-  <!-- PDF Lightbox Modal -->
+  <!-- ==== LIGHTBOX PREVIEW ==== -->
   <div id="pdfLightbox" class="lightbox" onclick="closePDF()">
     <span class="close" onclick="closePDF()">&times;</span>
     <div class="lightbox-content">
