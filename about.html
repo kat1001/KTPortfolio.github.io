@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me | Your Name</title>
+  <style>
+    :root {
+      --ink: #3C3633;
+      --sand: #EEEDEB;
+      --olive: #6e6c5f;
+      --accent: #ACD3A8;
+      --black: #000;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--sand);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--olive);
+      color: var(--white);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: var(--ink);
+    }
+
+    .bio-content {
+      font-size: 16px;
+      position: relative;
+    }
+
+    .bio-content img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 10px 20px 20px 0;
+      float: left;
+    }
+
+    .bio-content img.right {
+      float: right;
+      margin: 10px 0 20px 20px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      padding: 12px 24px;
+      background: var(--accent);
+      color: var(--black);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: background 0.2s ease;
+    }
+
+    .socials a:hover {
+      background: #93bd91;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f3f6f1;
+      font-size: 14px;
+      color: #777;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .bio-content img,
+      .bio-content img.right {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand"><a href="index.html" style="color: var(--white); text-decoration: none;">Home</a></div>
+    <nav class="nav-links">
+      <a href="about.html">About Me</a>
+      <a href="experience.html">Experience</a>
+      <a href="portfolio.html">Portfolio</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>About Me</h1>
+
+    <div class="bio-content">
+      <img src="images/about1.jpg" alt="Profile or working image" />
+
+      <p>I am a recent grad with a background in cognitive science, public health, clinical research, and data science . My work has spanned healthcare, sports, retail, and academic research. I have a strong curiosity for how data can drive meaningful change. I love to create tools and insights that people can actually use.</p>
+      
+      <p>Currently, I am searching for that starting point role that will allow me to learn the real world skills and techniques to be an impactful member of the workforce. As of lately in the meantime, I have been leaning into my personal interest in the sports space using my technical skills to rework re visit reinvigorate how fans interact with their preferred sports.  </p>
+      
+      <img src="images/about2.jpg" alt="Secondary photo" class="right" />
+
+      <p>Outside of work related stuff, I am an active in serving my communities I have led teams as a residential advisor, supported retail operations, and worked on community health projects. I care about creating environments where people feel supported and empowered. </p>
+
+      <p>This site brings together everything I have built so far projects, research, and technical documentation. </p>
+    </div>
+
+    <div class="socials">
+      <a href="https://linkedin.com/in/YOUR_LINK" target="_blank">LinkedIn</a>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
+      <a href="mailto:your@email.com">Email</a>
+    </div>
+  </main>
+
+  <footer>&copy; 2025 Your Name. All rights reserved.</footer>
+
+</body>
+</html>
+

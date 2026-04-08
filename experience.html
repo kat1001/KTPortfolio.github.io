@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience | Your Name</title>
+  <style>
+    :root {
+      --ink: #3C3633;
+      --sand: #EEEDEB;
+      --olive: #6e6c5f;
+      --accent: #ACD3A8;
+      --black: #000;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--sand);
+      color: var(--ink);
+      line-height: 1.6;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--olive);
+      color: var(--white);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: var(--ink);
+    }
+
+    h2.subheader {
+      margin-top: 60px;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: var(--olive);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 6px;
+    }
+
+    .job, .edu, .volunteer {
+      margin-bottom: 40px;
+    }
+
+    .job-title, .edu-title, .volunteer-title {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .job-title h3,
+    .edu-title h3,
+    .volunteer-title h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .job-title span,
+    .edu-title span,
+    .volunteer-title span {
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+    }
+
+    ul {
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 20px;
+      font-size: 14px;
+      background: #f3f6f1;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand"><a href="index.html" style="color: var(--white); text-decoration: none;">Home</a></div>
+    <nav class="nav-links">
+      <a href="about.html">About Me</a>
+      <a href="experience.html">Experience</a>
+      <a href="portfolio.html">Portfolio</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Experience</h1>
+
+    <h2 class="subheader">Work History</h2>
+
+    <section class="job">
+      <div class="job-title">
+        <h3>Research Assistant | UC San Diego</h3>
+        <span>2019–2024</span>
+      </div>
+      <ul>
+        <li>Led biomedical data analysis for clinical trials and observational studies.</li>
+        <li>Used SQL, R, Python, and Tableau to build predictive models and visualizations.</li>
+        <li>Worked with EHR data using Databricks and AWS.</li>
+      </ul>
+    </section>
+
+    <section class="job">
+      <div class="job-title">
+        <h3>Sports Statistician | Sweetwater Union High School</h3>
+        <span>2020–Present</span>
+      </div>
+      <ul>
+        <li>Tracked in-game stats for high school basketball and lacrosse teams.</li>
+        <li>Built scouting reports and performance summaries for players and coaches.</li>
+      </ul>
+    </section>
+
+    <section class="job">
+      <div class="job-title">
+        <h3>Program Assistant | San Diego VA Health Care System</h3>
+        <span>2023–Present</span>
+      </div>
+      <ul>
+        <li>Managed occupational health records and coordinated provider workflows.</li>
+        <li>Assisted with compliance reporting and internal protocols.</li>
+      </ul>
+    </section>
+
+    <section class="job">
+      <div class="job-title">
+        <h3>Department Assistant | UC San Diego Bookstore</h3>
+        <span>2019–2022</span>
+      </div>
+      <ul>
+        <li>Managed inventory and trained retail team members.</li>
+        <li>Introduced Excel system to optimize inventory performance.</li>
+      </ul>
+    </section>
+
+    <section class="job">
+      <div class="job-title">
+        <h3>Senior Residential Advisor | UC San Diego Housing</h3>
+        <span>2019–2024</span>
+      </div>
+      <ul>
+        <li>Mentored over 300 residents and led restorative justice sessions.</li>
+        <li>Organized events focused on wellness, careers, and academics.</li>
+      </ul>
+    </section>
+
+    <h2 class="subheader">Education</h2>
+
+    <section class="edu">
+      <div class="edu-title">
+        <h3>University of California, San Diego</h3>
+        <span>B.S. Cognitive Science & Public Health  2018–2022</span>
+      </div>
+      <ul>
+        <li>Specialization in Machine Learning and Neural Computation</li>
+        <li>Focus on Biostatistics and Epidemiologic Methods</li>
+      </ul>
+    </section>
+
+    <section class="edu">
+      <div class="edu-title">
+        <h3>University of California, San Diego</h3>
+        <span>Master’s in Clinical Research • 2023–2024</span>
+      </div>
+      <ul>
+        <li>Emphasis on advanced statistical modeling and applied analytics</li>
+      </ul>
+    </section>
+
+    <section class="edu">
+      <div class="edu-title">
+        <h3>University of California, Los Angeles</h3>
+        <span>Master’s in Data Science • In Progress</span>
+      </div>
+    </section>
+
+    <h2 class="subheader">Volunteering</h2>
+
+    <section class="volunteer">
+      <div class="volunteer-title">
+        <h3>Syringe Services Program | Family Health Centers of San Diego</h3>
+        <span>2024–Present</span>
+      </div>
+      <ul>
+        <li>Provided health education and essential supplies to at-risk populations.</li>
+        <li>Helped connect underserved individuals with healthcare resources.</li>
+      </ul>
+    </section>
+
+    <section class="volunteer">
+      <div class="volunteer-title">
+        <h3>Tutor | UCSD College Prep Program</h3>
+        <span>2020–2022</span>
+      </div>
+      <ul>
+        <li>Mentored high school students in math and science fundamentals.</li>
+        <li>Supported first-gen college applicants with academic confidence.</li>
+      </ul>
+    </section>
+
+  </main>
+
+    <section style="text-align:center; margin-top:60px;">
+    <h2>Resume</h2>
+    <button onclick="openPDF('pdfs/PFResume.pdf.pdf')" style="padding: 10px 20px; font-size: 16px; background-color: #0077cc; color: white; border: none; border-radius: 8px; cursor: pointer; margin: 10px;">
+      Preview Resume
+    </button>
+    <a href="pdfs/PFResume.pdf" download style="display:inline-block; padding: 10px 20px; font-size: 16px; background-color: #00ccaa; color: white; border-radius: 8px; text-decoration: none;">
+      Download PDF
+    </a>
+  </section>
+  </div>
+  
+
+  <script>
+    function openPDF(pdfPath) {
+      const viewer = document.getElementById("pdfViewer");
+      viewer.src = pdfPath;
+      document.getElementById("pdfLightbox").style.display = "block";
+    }
+  
+    function closePDF() {
+      document.getElementById("pdfLightbox").style.display = "none";
+      document.getElementById("pdfViewer").src = "";
+    }
+  </script>
+
+  <footer>&copy; 2025 Your Name</footer>
+
+</body>
+</html>

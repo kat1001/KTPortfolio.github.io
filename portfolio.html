@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio | Your Name</title>
+<style>
+:root {
+  --ink:#3C3633; --sand:#EEEDEB; --olive:#6e6c5f; --accent:#ACD3A8;
+  --black:#000; --white:#fff;
+}
+
+body{ margin:0; font-family:Arial,sans-serif; background:var(--sand); color:var(--ink); }
+header{ background:var(--olive); color:var(--white); padding:16px 24px; display:flex; justify-content:space-between; align-items:center; }
+.nav-links a{ margin-left:20px; color:var(--white); text-decoration:none; font-weight:bold; }
+.nav-links a:hover{ text-decoration:underline; }
+
+main{ padding:40px 20px; max-width:1200px; margin:auto; }
+h1{ text-align:center; font-size:36px; margin-bottom:50px; }
+h2.section-title{ margin:60px 0 20px; text-align:center; font-size:28px; color:var(--olive); }
+
+/* Carousel shell */
+.carousel{ position:relative; margin-bottom:40px; }
+.carousel-window{ overflow:hidden; width:100%; }
+.carousel-track{
+  display:flex;
+  gap:20px;            /* keep this in sync with JS step calc */
+  padding:10px 2px;
+  will-change: scroll-position;
+  overflow-x:auto;     /* native scrolling with arrows */
+  scroll-behavior:smooth;
+  scroll-snap-type:x mandatory;
+  justify-content:flex-start;
+}
+
+/* 3 cards per view on desktop */
+.project-card{
+  background:var(--white);
+  border-radius:12px;
+  padding:16px;
+  flex:0 0 calc((100% - 40px) / 3); /* 3 per row, two gaps of 20px = 40px */
+  max-width:360px; /* avoids getting too wide on huge screens */
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  transition:transform .2s ease;
+  scroll-snap-align:start;
+}
+.project-card:hover{ transform:translateY(-5px); }
+.project-card img{
+  width:100%; height:160px; object-fit:cover; border-radius:8px; cursor:pointer;
+}
+.project-info{ margin-top:12px; }
+.project-info h3{ margin:0; font-size:18px; }
+.project-info small{ color:#777; }
+
+/* Arrows */
+.carousel-button{
+  background:var(--accent); color:var(--black);
+  border:none; font-size:18px; font-weight:bold;
+  padding:10px 12px; cursor:pointer; position:absolute; top:50%;
+  transform:translateY(-50%); z-index:2; border-radius:8px;
+}
+.carousel-button.left{ left:-8px; }
+.carousel-button.right{ right:-8px; }
+.carousel-button:disabled{ opacity:.4; cursor:default; }
+
+/* Lightbox */
+.lightbox{
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,.8);
+  justify-content:center; align-items:center; z-index:999;
+}
+.lightbox-content{
+  background:var(--white); padding:20px; border-radius:12px;
+  max-width:90vw; max-height:85vh; overflow:auto;
+}
+.lightbox-content iframe,.lightbox-content img{ width:100%; height:80vh; border:0; }
+.lightbox-close{ position:absolute; top:20px; right:40px; color:#fff; font-size:30px; cursor:pointer; }
+
+/* Mobile: fewer per view automatically */
+@media (max-width: 900px){
+  .project-card{ flex:0 0 calc((100% - 20px) / 2); } /* 2 across */
+}
+@media (max-width: 560px){
+  .project-card{ flex:0 0 100%; } /* 1 across */
+  .carousel-button.left,.carousel-button.right{ display:none; } /* native swipe only */
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <div class="brand"><a href="index.html" style="color:var(--white);text-decoration:none">Home</a></div>
+    <nav class="nav-links">
+      <a href="about.html">About Me</a>
+      <a href="experience.html">Experience</a>
+      <a href="portfolio.html">Portfolio</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Portfolio</h1>
+
+    <!-- Research Projects -->
+    <h2 class="section-title">Research Projects</h2>
+    <div class="carousel">
+      <button class="carousel-button left" data-track="research" aria-label="scroll left">&#8249;</button>
+      <div class="carousel-window">
+        <div class="carousel-track" id="research">
+          <!-- Papers -->
+          <div class="project-card">
+            <img src="images/ldaprev.png" alt="Paper preview" onclick="openLightbox('pdfs/ldamanu.pdf')" />
+            <div class="project-info">
+              <h3>The Impact of Gender and Age on Lung Function in Children</h3>
+              <small>Paper</small>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="images/thesisprev.png" alt="Thesis preview" onclick="openLightbox('pdfs/thesis.pdf')" />
+            <div class="project-info">
+              <h3>The Influence of Mental Health on Diabetic Neuropathy Pain</h3>
+              <small>Paper</small>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="images/mlprev.png" alt="Paper preview" onclick="openLightbox('pdfs/mlmanu.pdf')" />
+            <div class="project-info">
+              <h3>Neurodegenerative Biomarkers & Cognitive Decline</h3>
+              <small>Paper</small>
+            </div>
+          </div>
+          <!-- Presentations -->
+          <div class="project-card">
+            <img src="images/mottoeat.png" alt="Presentation preview" onclick="openLightbox('pdfs/mottoeat.pdf')" />
+            <div class="project-info">
+              <h3>Motivation to Eat</h3>
+              <small>Presentation</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-button right" data-track="research" aria-label="scroll right">&#8250;</button>
+    </div>
+
+    <!-- Technical Projects -->
+    <h2 class="section-title">Technical Projects</h2>
+    <div class="carousel">
+      <button class="carousel-button left" data-track="technical" aria-label="scroll left">&#8249;</button>
+      <div class="carousel-window">
+        <div class="carousel-track" id="technical">
+          <div class="project-card">
+            <img src="images/code-thumb.jpg" alt="Preview" onclick="openLightbox('pdfs/code-report.pdf')" />
+            <div class="project-info">
+              <h3>Watch Sports Dsshboard</h3>
+              <small>Python | HTML| |Javascript</small>
+              <p>Dashboard for viewing sports stuff</p>
+            </div>
+          </div>
+          <!-- add more technical cards as needed -->
+        </div>
+      </div>
+      <button class="carousel-button right" data-track="technical" aria-label="scroll right">&#8250;</button>
+    </div>
+
+    <!-- Personal Projects -->
+    <h2 class="section-title">Personal Projects</h2>
+    <div class="carousel">
+      <button class="carousel-button left" data-track="personal" aria-label="scroll left">&#8249;</button>
+      <div class="carousel-window">
+        <div class="carousel-track" id="personal">
+          <div class="project-card">
+            <img src="images/music-thumb.jpg" alt="Preview" onclick="openLightbox('pdfs/music-trends.pdf')" />
+            <div class="project-info">
+              <h3>WNBA Guessing Games</h3>
+              <small> Pythong | HTML CSS Javascript </small>
+              <p>Static website daily game to guess WNBA players.</p>
+            </div>
+          </div>
+          <!-- add more personal cards as needed -->
+        </div>
+      </div>
+      <button class="carousel-button right" data-track="personal" aria-label="scroll right">&#8250;</button>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content" id="lightbox-content"></div>
+  </div>
+
+<script>
+  // Scroll exactly one card at a time
+  function stepFor(track){
+    const styles = getComputedStyle(track);
+    const gap = parseInt(styles.gap || styles.columnGap || 20, 10);
+    const card = track.querySelector('.project-card');
+    return card ? card.offsetWidth + gap : 300;
+  }
+
+  function scrollByOne(id, dir){
+    const track = document.getElementById(id);
+    track.scrollBy({ left: stepFor(track) * dir, behavior: 'smooth' });
+    setTimeout(()=>updateArrows(id), 200);
+  }
+
+  function updateArrows(id){
+    const track = document.getElementById(id);
+    const leftBtn = document.querySelector(`.carousel-button.left[data-track="${id}"]`);
+    const rightBtn = document.querySelector(`.carousel-button.right[data-track="${id}"]`);
+    if(!track || !leftBtn || !rightBtn) return;
+    leftBtn.disabled = track.scrollLeft <= 2;
+    rightBtn.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+  }
+
+  // Wire buttons
+  document.querySelectorAll('.carousel-button.left').forEach(btn=>{
+    btn.addEventListener('click', ()=> scrollByOne(btn.dataset.track, -1));
+  });
+  document.querySelectorAll('.carousel-button.right').forEach(btn=>{
+    btn.addEventListener('click', ()=> scrollByOne(btn.dataset.track, 1));
+  });
+
+  // Init + respond to resize and manual scroll
+  ['research','technical','personal'].forEach(id=>{
+    const track = document.getElementById(id);
+    if(!track) return;
+    updateArrows(id);
+    track.addEventListener('scroll', ()=>updateArrows(id));
+    window.addEventListener('resize', ()=>updateArrows(id));
+    // Hide arrows if <= 3 items (no overflow on desktop)
+    const count = track.querySelectorAll('.project-card').length;
+    const leftBtn = document.querySelector(`.carousel-button.left[data-track="${id}"]`);
+    const rightBtn = document.querySelector(`.carousel-button.right[data-track="${id}"]`);
+    if(count <= 3){ leftBtn.style.display='none'; rightBtn.style.display='none'; }
+  });
+
+  // Lightbox
+  function openLightbox(src){
+    const box = document.getElementById('lightbox');
+    const content = document.getElementById('lightbox-content');
+    const isPDF = src.toLowerCase().endsWith('.pdf');
+    content.innerHTML = isPDF
+      ? `<iframe src="${src}" title="document preview"></iframe>`
+      : `<img src="${src}" alt="preview">`;
+    box.style.display = 'flex';
+  }
+  function closeLightbox(){
+    const box = document.getElementById('lightbox');
+    const content = document.getElementById('lightbox-content');
+    box.style.display = 'none';
+    content.innerHTML = '';
+  }
+</script>
+</body>
+</html>
