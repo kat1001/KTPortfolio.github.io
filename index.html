@@ -17,7 +17,7 @@
   />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body oncontextmenu="return false">
   <div class="page-bg"></div>
 
   <header class="site-header">
@@ -47,7 +47,7 @@
           <p class="eyebrow">Portfolio</p>
           <h1>Researcher. Data Analyst. Sports Enthusiast. Change Maker. </h1>
           <p class="hero-description">
-            I have a background in clinical research, cognitive science, public health, 
+            Just a girl that has a background in clinical research, cognitive science, public health, 
             and data science, with experience using data to study real-world questions and build practical tools.
           </p>
 
@@ -94,13 +94,12 @@
             <p>
               Currently, I am searching for that first role that will allow me to learn the 
               real world skills and techniques to be an impactful member of the workforce. As of lately 
-              in the meantime, I have been leaning into my personal interest in the sports space using my 
-              technical skills to rework re visit reinvigorate how fans interact with their preferred sports.
+              , I have been leaning into my personal interest in the sports space using my 
+              technical skills to rework and reinvigorate how fans interact with their preferred sports.
             </p>
             <p>
-              Outside of work related stuff, I am an active in serving my communities I have led teams as a 
-              residential advisor, supported retail operations, and worked on community health projects. I 
-              care about creating environments where people feel supported and empowered.
+              Outside of work , I am an active in serving my communities I volunteer with community health programs, 
+              youth sports and local events needing support . I overall just care about creating environments where people feel supported and empowered.
             </p>
             <p>
               This site brings together everything I have built so far projects, research, and technical documentation. 
@@ -153,20 +152,28 @@
       </div>
     </section>
 
-    <section id="experience" class="section">
-      <div class="container experience-wrap">
-        <div class="section-heading compact-heading">
-          <p class="eyebrow">Experience</p>
-          <h2>Work History</h2>
-          <p class="section-text">
-            Professional, academic, leadership , and personal experience.
-          </p>
-        </div>
+<section id="experience" class="section">
+  <div class="container experience-wrap">
+    <div class="section-heading compact-heading">
+      <p class="eyebrow">Experience</p>
+      <h2>Work History</h2>
+      <p class="section-text">
+        Professional, academic, leadership, and personal experience.
+      </p>
+    </div>
 
-        <div class="experience-list">
-          <article class="experience-row">
-            <div class="experience-left">
-              <h3>Program Assistant</h3>
+    <div class="work-tabs">
+      <button class="tab-btn active" data-tab="professional">Professional</button>
+      <button class="tab-btn" data-tab="leadership">Leadership</button>
+      <button class="tab-btn" data-tab="community">Community</button>
+    </div>
+
+    <!-- Professional -->
+    <div class="tab-content active" id="professional">
+      <div class="experience-list">
+        <article class="experience-row">
+          <div class="experience-left">
+            <h3>Program Assistant</h3>
               <p class="experience-org">San Diego VA Health Care System</p>
             </div>
             <div class="experience-right">
@@ -174,14 +181,13 @@
               <ul>
                 <li>Supported compliance-oriented documentation and operational workflows in a regulated healthcare environment.</li>
                 <li>Managed confidential occupational health records and coordinated file transfers and communication across clinical teams.</li>
-                <li>Work within a professional environment where accuracy, timeliness, and communication matter.</li>
               </ul>
             </div>
           </article>
 
-          <article class="experience-row">
-            <div class="experience-left">
-              <h3>Research Assistant</h3>
+        <article class="experience-row">
+          <div class="experience-left">
+            <h3>Research Assistant</h3>
               <p class="experience-org">UC San Diego</p>
             </div>
             <div class="experience-right">
@@ -194,8 +200,8 @@
             </div>
           </article>
 
-          <article class="experience-row">
-            <div class="experience-left">
+        <article class="experience-row">
+          <div class="experience-left">
               <h3>Senior Residential Advisor</h3>
               <p class="experience-org">UCSD Residential Retail & Supply Chain Services</p>
             </div>
@@ -208,9 +214,16 @@
             </div>
           </article>
 
-          <article class="experience-row">
-            <div class="experience-left">
-              <h3>Department Assistant</h3>
+          
+      </div>
+    </div>
+
+    <!-- Leadership -->
+    <div class="tab-content" id="leadership">
+      <div class="experience-list">
+        <article class="experience-row">
+          <div class="experience-left">
+            <h3>Department Assistant</h3>
               <p class="experience-org">UC San Diego Bookstore Sunshine Market</p>
             </div>
             <div class="experience-right">
@@ -224,8 +237,28 @@
           </article>
 
           <article class="experience-row">
-            <div class="experience-left">
-              <h3>Volunteer</h3>
+          <div class="experience-left">
+              <h3>Division Leader</h3>
+              <p class="experience-org"> UNIQLO Inc.</p>
+            </div>
+            <div class="experience-right">
+              <span class="experience-date">2019 – 2024</span>
+              <ul>
+                <li>Curate weekly divison sales plan to optimize sales in Women's divison with product placement and sales promotions. </li>
+                <li>Maintained operational standards and supported inventory flow and replenishment.</li>
+                <li>Supported floor operations during high-traffic retail hours, ensuring smooth customer flow.</li>
+              </ul>
+            </div>
+          </article>
+      </div>
+    </div>
+
+    <!-- Community -->
+    <div class="tab-content" id="community">
+      <div class="experience-list">
+        <article class="experience-row">
+          <div class="experience-left">
+            <h3>Volunteer</h3>
               <p class="experience-org">Family Health Centers San Diego</p>
             </div>
             <div class="experience-right">
@@ -237,11 +270,27 @@
             </div>
           </article>
 
-        </div>
+          <article class="experience-row">
+          <div class="experience-left">
+            <h3>Volunteer</h3>
+              <p class="experience-org">USA Football</p>
+            </div>
+            <div class="experience-right">
+              <span class="experience-date">2026 – Present</span>
+              <ul>
+                <li>Supported operations for 5v5 scrimmages and combine drills.</li>
+                <li>Assisted with athlete check-in, event setup/tear-down, and testing. </li>
+              </ul>
+            </div>
+          </article>
+      </div>
+     </div>
+
+  
 
         <div class="resume-action">
           <button class="btn btn-primary" id="resumeButton" type="button">Download Resume</button>
-          <a href="pdfs/PFResume.pdf" id="resumeLink" download hidden></a>
+          <a href="pdfs/Resume0426.pdf" id="resumeLink" download hidden></a>
         </div>
       </div>
     </section>
@@ -282,11 +331,11 @@
                 <div class="project-meta centered">
                   <span>SQL</span>
                   <span>R</span>
-                  <span>Databricks</span>
+                  <span> AWS Databricks</span>
                   <span>Statistics</span>
                 </div>
                 <div class="project-actions centered">
-                  <a class="learn-more-btn" href="#" target="_blank">Learn More</a>
+                 <!-- <a class="learn-more-btn" href="#" target="_blank">Learn More</a> -->
                 </div>
               </div>
             </article>
@@ -294,60 +343,58 @@
             <article class="project-card featured">
               <div class="project-image preview-trigger"
                    data-title="WNBA Daily Game"
-                   data-image="https://via.placeholder.com/1200x800/173127/f5efe7?text=WNBA+Tool+Preview"
+                   data-image="images/SD1TEAMS.png"
                    data-description="A simple tool for collecting and exporting WNBA player information for future analytics and project development.">
-                <img src="https://via.placeholder.com/600x380/173127/f5efe7?text=WNBA+Tool" alt="Project preview">
+                <img src="images/SD1TEAMS.png" alt="Project preview">
                 <div class="image-overlay"><span>Preview</span></div>
               </div>
 
               <div class="project-content centered">
                 <div class="project-top centered">
-                  <h4>WNBA Daily Game Game</h4>
+                  <h4>San Diego Women's D1 Analysis</h4>
                   <span class="status-tag">Personal Project</span>
                 </div>
                 <p>
-                  An interactive player guessing game focused on women’s basketball.
+                  (In progress) A look into 3 of San Diego's divison 1 basketball programs.
                 </p>
                 <div class="project-meta centered">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
-                  <span>Photoshop</span>
+                  <span>R</span>
+                  <span>HTML/CSS</span>
                 </div>
                 <div class="project-actions centered">
-                  <a class="learn-more-btn" href="https://kat1001.github.io/wnbaguessinggame/" target="_blank">Learn More</a>
+                  <!-- <a class="learn-more-btn" href="#" target="_blank">Learn More</a> -->
                 </div>
               </div>
             </article>
 
             <article class="project-card featured">
               <div class="project-image preview-trigger"
-                   data-title="PayMap Budgeting App"
-                   data-image="https://via.placeholder.com/1200x800/3b251d/f5efe7?text=PayMap+Preview"
-                   data-description="A budgeting tool designed for students and young adults with part-time or inconsistent income.">
-                <img src="https://via.placeholder.com/600x380/3b251d/f5efe7?text=PayMap" alt="Project preview">
+                   data-title="San Diego Transit"
+                   data-image="images/sdtransit.png"
+                   data-description="A dashboard investigating San Diego's transit system.">
+                <img src="images/sdtransit.png" alt="Project preview">
                 <div class="image-overlay"><span>Preview</span></div>
               </div>
 
               <div class="project-content centered">
                 <div class="project-top centered">
-                  <h4>PayMap Budgeting App</h4>
-                  <span class="status-tag">Web App</span>
+                  <h4>San Diego Transit Analysis</h4>
+                  <span class="status-tag">Personal Project</span>
                 </div>
                 <p>
-                  A budgeting tool designed for students and young adults with part-time or
-                  inconsistent income, built to help users estimate paychecks and allocate funds.
+                  (In progress) A look into the saftey and operations of San Diego's transit system.
                 </p>
                 <div class="project-meta centered">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
+                  <span>R</span>
+                  <span>HTML/CSS</span>
+                  <span>Tableau</span>
                 </div>
                 <div class="project-actions centered">
-                  <a class="learn-more-btn" href="#" target="_blank">Learn More</a>
+                  <!-- <a class="learn-more-btn" href="#" target="_blank">Learn More</a> -->
                 </div>
               </div>
             </article>
+
           </div>
         </div>
 
@@ -374,7 +421,26 @@
                       <span>Clinical Research</span>
                     </div>
                     <div class="project-actions centered">
-                      <a class="learn-more-btn" href="#" target="_blank">Learn More</a>
+                      <!-- <a class="learn-more-btn" href="#" target="_blank">Learn More</a> -->
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-card small carousel-card">
+                  <div class="project-image static-image">
+                    <img src="images/WNBAguess.png" alt="Sports Prediction Concepts">
+                  </div>
+                  <div class="project-content centered">
+                    <h4>WNBA Daily Game</h4>
+                    <p>An interactive player guessing game focused on women’s basketball. </p>
+                    <div class="project-meta centered">
+                      <span>HTML</span>
+                      <span>CSS</span>
+                      <span>JavaScript</span>
+                      <span>Photoshop</span>
+                    </div>
+                    <div class="project-actions centered">
+                      <a class="learn-more-btn" href="https://kat1001.github.io/wnbaguessinggame/" target="_blank">Learn More</a>
                     </div>
                   </div>
                 </article>
@@ -392,28 +458,11 @@
                       <span>Clinical Research</span>
                     </div>
                     <div class="project-actions centered">
-                      <a class="learn-more-btn" href="#" target="_blank">Learn More</a>
+                      <!-- <a class="learn-more-btn" href="#" target="_blank">Learn More</a> -->
                     </div>
                   </div>
                 </article>
 
-                <article class="project-card small carousel-card">
-                  <div class="project-image static-image">
-                    <img src="https://via.placeholder.com/500x300/173127/f5efe7?text=Predictions" alt="Sports Prediction Concepts">
-                  </div>
-                  <div class="project-content centered">
-                    <h4>WNBA Data Pipeline Tool</h4>
-                    <p>A simple tool for collecting and exporting WNBA player information for future
-                  analytics and project development. </p>
-                    <div class="project-meta centered">
-                      <span>HTML</span>
-                      <span>CSS</span>
-                    </div>
-                    <div class="project-actions centered">
-                      <a class="learn-more-btn" href="#" target="_blank">Learn More</a>
-                    </div>
-                  </div>
-                </article>
                 
 
                
@@ -477,10 +526,10 @@
           </p>
 
           <div class="contact-links">
-            <a href="mailto:youremail@example.com">famthompson10@gmail.com</a>
+            <a href="mailto:famthompson10@gmail.com">Email</a>
             <a href="www.linkedin.com/in/keionni-thompson-6b700b199">LinkedIn</a>
             <a href="https://github.com/kat1001">GitHub</a>
-            <a href="#">Resume</a>
+           <!-- <a href="#">Resume</a> -->
           </div>
         </div>
       </div>
